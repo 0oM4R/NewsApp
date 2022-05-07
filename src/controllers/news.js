@@ -11,6 +11,7 @@ const request = require('request')
         if(!err&&res.body.status=='ok'){
             callback(undefined,res.body.articles)
         }else{
+            err=res.body.message;
             callback(err,undefined)
         }
     })
